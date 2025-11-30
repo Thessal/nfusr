@@ -1,0 +1,12 @@
+{ config, pkgs, ... } : 
+let 
+ nfusr = import (builtins.fetchGit {
+    url = "https://github.com/Thessal/nfusr.git"; 
+    ref = "master"; 
+    rev = "8fcb5e1e36f6ad80da0b6205a6ef625153185bae";
+  });
+in 
+{
+  # It does not work; use shell.nix : users.users.jongkook90.packages = [ nfusr ];
+  # Don't do this; it will break your system : fileSystems."/mnt" = { fsType = "nfusr"; };
+}

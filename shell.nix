@@ -7,10 +7,11 @@ pkgs.callPackage (
   }:
   mkShell {
     packages = [
-       (import ./default.nix)
-       # or replace it with (builtins.fetchGit { url = "https://github.com/Thessal/nfusr"; ref = "main"; rev = "commit-hash";)
-  }) {};
-
+       #(import ./default.nix)
+       (import (builtins.fetchGit { url = "https://github.com/Thessal/nfusr"; ref = "master"; rev = "8fcb5e1e36f6ad80da0b6205a6ef625153185bae";}))
     ];
+    shellHook = ''
+       # mount.nfusr nfs://ip/dir /mnt
+    '';
   }
 ) { }

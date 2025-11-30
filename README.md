@@ -1,3 +1,11 @@
+# nfusr NixOS package
+
+NFSv3 userspace client when your kernel have no NFS support.
+
+Usage:
+ 
+    Check out shell.nix, configuration.nix.example
+
 # nfusr
 
 nfusr is a userspace FUSE client for accessing NFSv3 servers based on
